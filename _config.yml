@@ -19,21 +19,21 @@ plugins:
   - jekyll-seo-tag
 
 authors:
-    shiva:
-      name:           Shiva Shams
-      site:
-      avatar:         /assets/images/avatar1.jpg
-      bio:            "DevOps Engineer"
-      email:          shivaa.shams@gmail.com
-      twitter:        https://twitter.com/cheava
+  shiva:
+    name:           Shiva Shams
+    site:
+    avatar:         /assets/images/avatar1.jpg
+    bio:            "DevOps Engineer"
+    email:          shivaa.shams@gmail.com
+    twitter:        https://twitter.com/cheava
 
-    mort:
-      name:           Morteza NourelahiAlamdari
-      site:           https://0t1.me
-      avatar:         /assets/images/avatar2.jpg
-      bio:            "Senior Software Engineer"
-      email:          m@0t1.me
-      twitter:        https://twitter.com/mortymacs
+  mort:
+    name:           Morteza NourelahiAlamdari
+    site:           https://0t1.me
+    avatar:         /assets/images/avatar2.jpg
+    bio:            "Senior Software Engineer"
+    email:          m@0t1.me
+    twitter:        https://twitter.com/mortymacs
 
 # Defaults
 defaults:
@@ -43,8 +43,8 @@ defaults:
       path: "_posts"
     values:
       layout: post
-#      author: sal
-#      avatar: /assets/images/avatar1.jpg
+  #      author: sal
+  #      avatar: /assets/images/avatar1.jpg
 
   # all pages
   - scope:
