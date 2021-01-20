@@ -1,4 +1,3 @@
-```
 ---
 layout: post
 title:  "Running a Minio cluster in three different nodes"
@@ -6,7 +5,6 @@ author: shiva
 categories: [ Storage, Minio ]
 image: assets/images/7.jpg
 ---
-```
 ![img](https://lh4.googleusercontent.com/rv8pNvUreL22EVygcqmLQk0gw9fafD-mCrwpZcEN1UiayZmsDMyDods4AhV8AwOBCuVyAYSP1zHRSQY3HYuxtot612-h0SjDvcJn4Zba9ASNuVIy5sdE1Jn7QWn2ADOEK7iLOPxv)
 
 # How to run Minio in different nodes with docker 
