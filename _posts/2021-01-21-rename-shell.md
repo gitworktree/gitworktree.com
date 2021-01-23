@@ -3,7 +3,7 @@ layout: post
 title:  "Renaming shell's title in Ubuntu"
 author: shiva
 categories: [ Linux, Bash ]
-image: assets/images/7.jpg
+image: assets/images/bash.gif
 ---
 # How to rename shel's title in ubuntu
 add the following lines in your bash.rc
