@@ -3,11 +3,9 @@ layout: post
 title:  "Running a Minio cluster in three different nodes"
 author: shiva
 categories: [ Storage, Minio ]
-image: assets/images/7.jpg
+image: assets/images/2021-01-21-minio-up-and-running.gif
 ---
-![img](https://lh4.googleusercontent.com/rv8pNvUreL22EVygcqmLQk0gw9fafD-mCrwpZcEN1UiayZmsDMyDods4AhV8AwOBCuVyAYSP1zHRSQY3HYuxtot612-h0SjDvcJn4Zba9ASNuVIy5sdE1Jn7QWn2ADOEK7iLOPxv)
-
-# How to run Minio in different nodes with docker 
+# How to Run Minio in Different Nodes with Docker 
 
 In this example I want to have 3 nodes in the Minio cluster.
 **1- install docker and docker compose**
@@ -15,23 +13,29 @@ To handle the Minio container in case of failure it’s good to have docker comp
 
 **2- define a docker compose**
 There is an image for Minio in docker hub which we can use. According to the Minio documentation we need at least two disks for each node, that’s why I added two directories in /media directory like this:
+
 ```
 /media/minio1
 /media/minio2
 ```
+
 And repeat it for the other nodes. For introducing nodes to each other we should pass the all nodes with their disks as a start input to Minio. In this example I have three nodes with the following IPs:
+
 ```
 192.168.1.1
 192.168.1.2
 192.168.1.3
 ```
+
 We should pass it for each three nodes Minio start command:
+
+```bash
+$ server http://192.168.1.1/minio1 http://192.168.1.1/minio2 http://192.168.1.2/minio1 http://192.168.1.2/minio2 http://192.168.1.3/minio1 http://192.168.1.3/minio2
 ```
-server http://192.168.1.1/minio1 http://192.168.1.1/minio2 http://192.168.1.2/minio1 http://192.168.1.2/minio2 http://192.168.1.3/minio1 http://192.168.1.3/minio2
-```
+
 Also all nodes only can connect to each other with the same secret key and access key which we should pass at start command too, in this case I’m gonna set them as the environment variable.
 
-```
+```yaml
 version: '3'
 services:
  minio:
@@ -54,16 +58,18 @@ services:
    timeout: 20s
    retries: 3
 ```
+
 If you don't want to use docker compose you can use the following command:
 
+```bash
+$ docker run -p 9000:9000 -e MINIO_ACCESS_KEY=admin -e MINIO_SECRET_KEY=blahblahblah -v /media/minio1:/minio1 -v /media/minio2:/minio2 --net=host minio/minio:RELEASE.2020-12-29T23-29-29Z server [http://192.168.1.{1...3}/minio{1..2](about:blank)}
 ```
-docker run -p 9000:9000 -e MINIO_ACCESS_KEY=admin -e MINIO_SECRET_KEY=blahblahblah -v /media/minio1:/minio1 -v /media/minio2:/minio2 --net=host minio/minio:RELEASE.2020-12-29T23-29-29Z server [http://192.168.1.{1...3}/minio{1..2](about:blank)}
-```
+
 Now you can run the docker-compose up -d command to start your Minio cluster.
 
 To have a better cluster setting, it’s good to have a Nginx in front of the Minio cluster to have a unique IP to connect to the Minio cluster, for do this we should add Nginx section like the following at the end of one of our docker compose files:
 
-```
+```yaml
  nginx:
   image: nginx:1.19.2-alpine
   volumes:
@@ -73,7 +79,9 @@ To have a better cluster setting, it’s good to have a Nginx in front of the Mi
   depends_on:
    \- minio
 ```
-Also you should put the nginx.conf beside the docker compose file with the following config:
+
+Also, you should put the nginx.conf beside the docker compose file with the following config:
+
 ```
 user nginx;
 worker_processes auto;
@@ -126,6 +134,7 @@ http {
   }
 }
 ```
+
 I’m gonna add it end of the docker compose file of the first node, now I start the cluster again.
 **3- login**
 Now you can access the panel in your browser with 192.268.1.1:9797

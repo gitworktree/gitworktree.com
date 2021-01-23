@@ -22,7 +22,7 @@ authors:
   shiva:
     name:           Shiva Shams
     site:
-    avatar:         /assets/images/avatar1.jpg
+    avatar:         assets/images/profile/shiva.jpg
     bio:            "DevOps Engineer"
     email:          shivaa.shams@gmail.com
     twitter:        https://twitter.com/cheava
@@ -30,7 +30,7 @@ authors:
   mort:
     name:           Morteza NourelahiAlamdari
     site:           https://0t1.me
-    avatar:         /assets/images/avatar2.jpg
+    avatar:         assets/images/profile/mort.jpg
     bio:            "Senior Software Engineer"
     email:          m@0t1.me
     twitter:        https://twitter.com/mortymacs
