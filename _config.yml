@@ -60,5 +60,7 @@ highlighter: rouge
 paginate: 10
 paginate_path: blog/page:num/
 
+google_web_stream: "G-PQC9WY2Y9C"
+
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
