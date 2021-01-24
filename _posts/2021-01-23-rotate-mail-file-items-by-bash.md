@@ -67,10 +67,15 @@ echo "d 1-${remove_items#-}" | mail -u "${user}" -N
 First parameter is username, and the second parameter is maximum threshold of email items.
 It removes the old emails based on threshold number.
 
+```bash
+$ chmod +x rotate-mail.sh
+$ ./rotate-mail.sh user-1 100
+```
+
 Now, you can save it in `rotate-mail.sh` file in `/usr/local/bin/` and define a cronjob for it:
 
 ```
-0 * * * * rotate-mail.sh user-1 100
+0 * * * * bash rotate-mail.sh user-1 100
 ```
 
 You can use [crontab.guru](https://crontab.guru/#0_*_*_*_*) to make your own schedule time.
