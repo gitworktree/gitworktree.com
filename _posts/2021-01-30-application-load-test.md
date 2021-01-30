@@ -134,4 +134,4 @@ $ wrk -c1000 -t100 http://localhost/myapplication
 ### Conclusion
 
 Load testing or getting benchmark of an application is a very important step of releasing. If you don't have any idea about your application benchmark, maybe it's the time to check it today with these tools. If BlackFriday is coming, does your ecommerce or website support many active users at the same time?
-At least you need to have a baseline for your application's load test to know the current status and then you can prepare a plan to improve and optimize it in the future.
+At least you need to have a baseline for your application's load test to know the current status and then you can prepare a plan to improve and optimize it in the future. They're plenty of tools exist for load testing that we didn't dicuss, in the upcoming articles, we'll talk about them.
