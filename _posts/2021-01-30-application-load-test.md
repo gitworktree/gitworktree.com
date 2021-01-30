@@ -10,7 +10,7 @@ image: assets/images/2021-01-30-application-load-test.gif
 When you're developing an application, you need to know how much accessible your application will be when many clients are connected, or if you already have a system in your office and you may want to know if number of employees are increasing during the time, can this application still serve requests?.
 It's a good idea to know at least as a range of number how many users your application can handle at the same time.
 Luckily, there are plenty of tools exist to let you test your application by supporting variety of protocols.
-In this article, we're going to review some CLI tools which you can start using them today.
+In this article, we're going to review some CLI HTTP load testing tools which you can start using them today.
 
 ### Scenario
 
