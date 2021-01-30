@@ -96,7 +96,7 @@ Based on wrk's Github:
 
 > wrk is a modern HTTP benchmarking tool capable of generating significant load when run on a single multi-core CPU. It combines a multithreaded design with scalable event notification systems such as epoll and kqueue.
 
-One benefit on wrk is it supports LuaJIT to perform HTTP request genetion:
+One benefit on wrk is it supports [LuaJIT](https://luajit.org/) to perform HTTP request genetion:
 
 > An optional LuaJIT script can perform HTTP request generation, response processing, and custom reporting. Details are available in SCRIPTING and several examples are located in [scripts/](https://github.com/wg/wrk/blob/master/scripts).
 
